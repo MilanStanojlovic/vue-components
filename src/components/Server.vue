@@ -1,10 +1,23 @@
 <template>
   <div>
-    <li class="list-group-item" v-for="index in 5">Server #{{ index }}</li>
+    <li
+      class="list-group-item"
+      @click="serverSelected"
+      style="cursor: pointer"
+    >Server #{{ server.id }}</li>
   </div>
 </template>
 <script>
-export default {};
+import { eventBus } from "../main";
+
+export default {
+  props: ["server"],
+  methods: {
+    serverSelected() {
+      eventBus.$emit("serverSelected", this.server);
+    }
+  }
+};
 </script>
 <style scoped>
 div {

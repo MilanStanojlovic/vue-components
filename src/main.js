@@ -8,7 +8,9 @@ import ServerList from './components/ServerList.vue'
 Vue.component('app-servers', Home);
 Vue.component('app-header', Header);
 Vue.component('app-footer', Footer);
-Vue.component('app-servers', ServerList)
+Vue.component('app-servers', ServerList);
+
+export const eventBus = new Vue();
 
 new Vue({
   el: '#app',
